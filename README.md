@@ -1,4 +1,5 @@
 <img src="http://assets.angular.schule/logo-angular-workshop-ng7.png">
+<img src="https://blog.johanneshoppe.de/wp-content/uploads/2015/02/dhbw_mosbach_2014.gif" align="right">
 
 #### **von Johannes Hoppe**
 
