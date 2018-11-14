@@ -24,6 +24,7 @@ Die gesamte Installation wird rund 30 Minuten dauern.
 
 ## Proxy?
 
+Solltest du über einen Proxy online gehen, dann lese hier weiter.
 Für eine Proxykonfiguration sind gesonderte Einstellungen nötig.
 Wir haben dir hierfür folgende Anleitung erstellt:
 https://presentations.angular.schule/PROXY.html  
