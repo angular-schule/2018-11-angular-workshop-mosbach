@@ -62,12 +62,16 @@ Was die Parameter im Einzelnen bedeuten, besprechen wir natürlich im Workshop!
 Führe in Deinem Arbeitsverzeichnis die folgenden Befehle aus:
 
 ```
-ng new book-rating --routing --style=scss --prefix=br 
+ng new book-rating --routing --prefix=br --style=scss
 cd book-rating
-ng serve -o
+ng serve
 ```
 
-Achtung! Die Installation kann bei langsamer Internetverbindung sehr lange dauern.
+> ACHTUNG: Bei Fehlern mit `node-gyp` bzw. `node-sass` bitte noch einmal ausführen: `npm i node-sass`.
+> Wenn du einen Mac hast, musst du ggf. auch noch XCode installieren!
+
+
+Die Installation kann bei langsamer Internetverbindung sehr lange dauern.
 Warte beim Schritt `Installing packages for tooling via npm.` mit Geduld ab!
 
 
