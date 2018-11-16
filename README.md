@@ -64,7 +64,7 @@ Führe in Deinem Arbeitsverzeichnis die folgenden Befehle aus:
 ```
 ng new book-rating --routing --prefix=br --style=scss
 cd book-rating
-ng serve
+ng serve -o
 ```
 
 > ACHTUNG: Bei Fehlern mit `node-gyp` bzw. `node-sass` bitte noch einmal ausführen: `npm i node-sass`.
