@@ -3,6 +3,8 @@
 
 #### **von Johannes Hoppe**
 
+[![Join the chat at https://gitter.im/2018-11-angular-workshop-mosbach/Lobby](https://badges.gitter.im/2018-11-angular-workshop-mosbach/Lobby.svg)](https://gitter.im/2018-11-angular-workshop-mosbach/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <hr>
 
 **Schön, dass Du dabei bist!**  
