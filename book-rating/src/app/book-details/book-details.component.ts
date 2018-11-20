@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-book-details',
@@ -9,11 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class BookDetailsComponent implements OnInit {
 
   isbn: string;
+  book: Book; // TODO: implement me!
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: BookStoreService) { }
 
   ngOnInit() {
-    this.isbn = this.route.snapshot.paramMap.get('isbn');
+    this.route.paramMap.subscribe(
+      params => {
+        this.isbn = params.get('isbn');
+        this.service.getSingleBook(this.isbn)
+          .subscribe(book => this.book = book);
+      }
+    );
   }
 
 }
