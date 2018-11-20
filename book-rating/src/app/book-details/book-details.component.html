@@ -1,7 +1,9 @@
-<h2>{{ isbn }}</h2>
+<div *ngIf="book | async as b">
 
-<p>
-  book-details works!
-</p>
+  <h2>{{ b.isbn }}</h2>
 
-<a routerLink="/book/222">Buch 222</a>
+  <p>
+    {{ b.description }}
+  </p>
+
+</div>
