@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-dashboard',
@@ -8,10 +9,11 @@ import { Book } from '../shared/book';
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[];
+  books: Book[] = [];
 
-  constructor() { }
+  constructor(public service: BookStoreService) { }
 
+  // LÖSUNG A
   replaceAndSort(newBook: Book) {
     const index = this.books.findIndex(
       book => book.isbn === newBook.isbn
@@ -24,24 +26,16 @@ export class DashboardComponent implements OnInit {
     this.books.sort((a, b) => b.rating - a.rating);
   }
 
+  // LÖSUNG B
+  replaceAndSort2(newBook: Book) {
+    this.books = this.books
+      .map(b => b.isbn === newBook.isbn ? newBook : b)
+      .sort((a, b) => b.rating - a.rating);
+  }
 
   ngOnInit() {
-    this.books = [{
-      isbn: '00',
-      title: 'Angular',
-      description: 'Tolles Buch',
-      rating: 5
-    }, {
-      isbn: '11',
-      title: 'AngularJS',
-      description: 'Altes Buch',
-      rating: 1
-    }, {
-      isbn: '22',
-      title: 'React',
-      description: 'anderes Framework, auch toll',
-      rating: 2
-    }];
+    this.service.getAllBooks()
+      .subscribe(books => this.books = books);
   }
 
 }
