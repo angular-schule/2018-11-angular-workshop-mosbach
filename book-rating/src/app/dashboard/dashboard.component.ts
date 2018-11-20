@@ -12,6 +12,19 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
+  replaceAndSort(newBook: Book) {
+    const index = this.books.findIndex(
+      book => book.isbn === newBook.isbn
+    );
+
+    if (index !== -1) {
+      this.books[index] = newBook;
+    }
+
+    this.books.sort((a, b) => b.rating - a.rating);
+  }
+
+
   ngOnInit() {
     this.books = [{
       isbn: '00',

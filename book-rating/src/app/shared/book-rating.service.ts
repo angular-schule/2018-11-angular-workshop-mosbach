@@ -6,11 +6,20 @@ import { Book } from './book';
   providedIn: 'root'
 })
 export class BookRatingService {
-  rateDown(book: Book): any {
-    throw new Error('Method not implemented.');
+
+  private minRating = 1;
+  private maxRating = 5;
+
+  rateDown(book: Book): Book {
+    return {
+      ...book,
+      rating: Math.max(book.rating - 1, this.minRating)
+    };
   }
-  rateUp(book: Book): any {
-    throw new Error('Method not implemented.');
+  rateUp(book: Book): Book {
+    return {
+      ...book,
+      rating: Math.min(book.rating + 1, this.maxRating)
+    };
   }
-  constructor() { }
 }

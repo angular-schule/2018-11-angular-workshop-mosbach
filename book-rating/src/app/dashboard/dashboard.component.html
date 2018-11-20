@@ -1,4 +1,5 @@
 <br-book
   *ngFor="let b of books"
-  [book]="b">
+  [book]="b"
+  (rated)="replaceAndSort($event)">
 </br-book>
